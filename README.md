@@ -4,7 +4,7 @@ Author: <b>Mr Crader</b> <br>
 Technologies: <b>EJB, JPA, JAX-RS, BeanValidation, JUnit</b> <br>
 DBMS: <b>MySQL, PostgreSQL</b> <br>
 Target Project: <b>WildFly</b> <br>
-Source: <a href="https://gitlab.com/mrcrader/coffeeworks/">GitLab</a> <a href="https://github.com/mrcracken/coffeeworks/">GitHub</a><br>
+Source: <a href="https://gitlab.com/mrcrader/coffeeworks/">GitLab</a> or <a href="https://github.com/mrcracken/coffeeworks/">GitHub</a><br>
 
 System requirements
 -------------------
