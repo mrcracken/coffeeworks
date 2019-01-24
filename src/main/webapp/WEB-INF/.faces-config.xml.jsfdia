@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:coffee.xhtml" PATH="coffee.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:coffee.xhtml:0" NAME="item"
+   PATH="coffee.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="coffeeUpdate::coffeeUpdate.xhtml"
+    NAME="output" PATH="coffeeUpdate.xhtml"
+    TARGET="rules:coffeeUpdate.xhtml" TITLE="coffeeUpdate" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:coffeeUpdate.xhtml" PATH="coffeeUpdate.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

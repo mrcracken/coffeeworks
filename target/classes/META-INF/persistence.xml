@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+   xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+   <persistence-unit name="primary">
+   	 	<!-- 
+     		Go to wildfly-12.0.0.Final\standalone\configuration\standalone.xml and search for a datasource. 
+     		In MySQL Datasource copy jndi-name like jndi-name="java:/MySqlDS and insert it in <jta-data-source> here
+     	-->
+      <jta-data-source>java:/datasources/CoffeeDS</jta-data-source>
+      <properties>
+         <!-- Properties for Hibernate -->
+         <!-- 
+         	Check this to know why we commented create-drop value.
+         	For hibernate.hbm2ddl.auto value visit:
+         	https://stackoverflow.com/questions/438146/hibernate-hbm2ddl-auto-possible-values-and-what-they-do 
+         -->
+         <!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+         <property name="hibernate.hbm2ddl.auto" value="update" />
+         <property name="hibernate.show_sql" value="false" />
+      </properties>
+   </persistence-unit>
+</persistence>

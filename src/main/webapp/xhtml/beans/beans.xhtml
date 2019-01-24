@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="../../WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+    
+        <h1>Welcome to Coffee Works Project!</h1>
+   
+		   <h:form id="reg">
+		        <h2>Add a new Coffee</h2>
+		        	<p>Enforces annotation-based constraints defined on the model class.</p>
+		    	<h:outputLabel for="name" value="Name:" />
+                <h:inputText id="name" value="#{beansBean.name}" />
+                <h:message for="name" errorClass="invalid" />
+            
+	            <p>
+	                <h:panelGrid columns="2">
+	                    <h:commandButton id="addBeanButton"
+	                        action="#{onButtonAddBeanClick.addButton()}"
+	                        value="Add Bean" styleClass="addBeanButton" />
+	                    <h:messages styleClass="messages"
+	                        errorClass="invalid" infoClass="valid"
+	                        warnClass="warning" globalOnly="true" />
+	                </h:panelGrid>
+	            </p> 
+	                 
+	        </h:form>
+   
+        <h:dataTable var="_bean" value="#{retrieveBeans}"
+            rendered="#{not empty retrieveBeans}"
+            styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_bean.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{_bean.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">REST URL</f:facet>
+                <a
+                    href="#{request.contextPath}/rest/beans/#{_bean.id}">/rest/beans/#{_bean.id}</a>
+            </h:column>
+            <f:facet name="footer">
+            REST URL for all beans: <a
+                    href="#{request.contextPath}/rest/beans">/rest/beans</a>
+            </f:facet>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
